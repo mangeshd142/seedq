@@ -29,7 +29,6 @@ class Form extends Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
-        Hello 
       </form>
     );
   }
