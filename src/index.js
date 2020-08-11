@@ -1,10 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './js/components/App';
-//import * as serviceWorker from './serviceWorker';
-import { Provider } from "react-redux";
-import Store  from './js/store/index';
-ReactDOM.render(<Provider store={Store}><App /></Provider>, document.getElementById('root'));
-//ReactDOM.render(React.createElement(Form), document.getElementById('root'));
-//serviceWorker.unregister();
+import Controller from './js/Controller/Controller';
+ReactDOM.render(React.createElement(Controller), document.getElementById('root'));
