@@ -1,3 +1,5 @@
 /UI/node_modules
 /UI/package-lock.json
 /UI/public/bundle.js
+/Workspace/Rest/.settings
+/Workspace/RestInterface/.settings
