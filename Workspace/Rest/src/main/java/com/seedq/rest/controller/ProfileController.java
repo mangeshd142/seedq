@@ -7,16 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.seedq.rest.bean.ErrorBean;
 import com.seedq.rest.bean.UserBean;
 import com.seedq.restinterface.bean.ResponseBeanInterface;
 
 @RestController
 public class ProfileController {
 	@Autowired
-	ResponseBeanInterface<UserBean> responseBean;
+	ResponseBeanInterface<UserBean, ErrorBean> responseBean;
 	
 	@RequestMapping("/profile")
-	public ResponseBeanInterface<UserBean> getProfile() {
+	public ResponseBeanInterface<UserBean, ErrorBean> getProfile() {
 		
 		List<UserBean> userBeans = new ArrayList<UserBean>();
 		userBeans.add(new UserBean("Mangesh", "mangesh142", "mangeshd142@gmail.com"));

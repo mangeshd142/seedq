@@ -1,6 +1,8 @@
 package com.seedq.rest.bean;
 
-public class UserBean {
+import com.seedq.restinterface.bean.UserBeanInterface;
+
+public class UserBean implements UserBeanInterface{
 	private String name;
 	private String userNaame;
 	private String email;
@@ -34,7 +36,5 @@ public class UserBean {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 	
 }

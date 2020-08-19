@@ -4,16 +4,14 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.seedq.restinterface.bean.ErrorBeanInterface;
 import com.seedq.restinterface.bean.ResponseBeanInterface;
 
 @Component
-public class ResponseBean<T> implements ResponseBeanInterface<T>{
+public class ResponseBean<T, E> implements ResponseBeanInterface<T, E>{
 	
 	private List<T> success;
-	private ErrorBeanInterface error; 
+	private List<E> error; 
 
-	
 	public List<T> getSuccess() {
 		return success;
 	}
@@ -22,11 +20,11 @@ public class ResponseBean<T> implements ResponseBeanInterface<T>{
 		this.success = success;
 	}
 
-	public ErrorBeanInterface getError() {
+	public List<E> getError() {
 		return error;
 	}
 
-	public void setError(ErrorBeanInterface error) {
+	public void setError(List<E> error) {
 		this.error = error;
 	}
 	
