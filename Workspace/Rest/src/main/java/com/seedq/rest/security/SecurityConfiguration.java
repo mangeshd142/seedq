@@ -23,10 +23,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.roles("user");
 	}
 	
-	@Bean
-	public PasswordEncoder getPasswordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
-	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -40,8 +36,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.hasRole("user")
 		.antMatchers(urls.toArray(new String[urls.size()]))
 		.permitAll()
-		.and().formLogin();
+		.and().httpBasic();
 	}
 	
+
+	@Bean
+	public PasswordEncoder getPasswordEncoder() {
+		return NoOpPasswordEncoder.getInstance();
+	}
 	
 }
