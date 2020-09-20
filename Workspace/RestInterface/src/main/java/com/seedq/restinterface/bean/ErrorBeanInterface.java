@@ -1,10 +1,8 @@
 package com.seedq.restinterface.bean;
 
-import java.util.List;
-
 public interface ErrorBeanInterface {
-	public List getError();
+	public String getError();
 
-	public void setError(List error);
+	public void setError(String error);
 	
 }

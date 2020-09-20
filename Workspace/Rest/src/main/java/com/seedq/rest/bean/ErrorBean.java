@@ -1,17 +1,19 @@
 package com.seedq.rest.bean;
 
-import java.util.List;
+import org.springframework.stereotype.Component;
 
 import com.seedq.restinterface.bean.ErrorBeanInterface;
 
+@Component
 public class ErrorBean implements ErrorBeanInterface{
-	List error;
+	String error;
 
-	public List getError() {
+	public String getError() {
 		return error;
 	}
 
-	public void setError(List error) {
+	public void setError(String error) {
 		this.error = error;
 	}
+
 }

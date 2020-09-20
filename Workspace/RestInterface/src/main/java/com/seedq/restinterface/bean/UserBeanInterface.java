@@ -1,6 +1,6 @@
 package com.seedq.restinterface.bean;
 
-public interface UserBeanInterface {
+public interface UserBeanInterface extends CommonInterface {
 	
 	public String getName();
 	public void setName(String name);

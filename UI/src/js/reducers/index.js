@@ -1,4 +1,5 @@
 import { ADD_ARTICLE, REMOVE_ARTICLE } from "../constants/action-types";
+import apiFetch from "../util/fetch";
  
 const initialState = {
     articles: []
@@ -14,6 +15,7 @@ function rootReducer(state = initialState, action) {
         state.articles.forEach(function(a){
             if(a.title != action.payload)
             arr.push(a)
+            apiFetch("http://localhost:8080/profile", "GET", "","", {});
         });
         
         return Object.assign({}, state, {

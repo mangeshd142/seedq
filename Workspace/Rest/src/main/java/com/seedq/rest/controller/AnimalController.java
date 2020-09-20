@@ -7,25 +7,26 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.seedq.restinterface.action.FetchUserInterface;
+import com.seedq.restinterface.action.FetchAnimalsInterface;
 import com.seedq.restinterface.bean.CommonInterface;
 import com.seedq.restinterface.bean.ErrorBeanInterface;
 import com.seedq.restinterface.bean.PrepareResponseInterface;
 import com.seedq.restinterface.bean.ResponseBeanInterface;
 
 @RestController
-public class ProfileController {
+public class AnimalController {
 	
 	@Autowired
-	PrepareResponseInterface prepareResponseInterface;
+	PrepareResponseInterface prepareResponse;
 	
 	@Autowired
-	FetchUserInterface fetchUser;
+	FetchAnimalsInterface fetchAnimals; 
 	
 	@CrossOrigin(origins = "*")
-	@RequestMapping("/profile")
-	public ResponseBeanInterface<CommonInterface, ErrorBeanInterface> getProfile(HttpServletResponse servletResponse) throws Exception {
+	@RequestMapping("/animals")
+	public ResponseBeanInterface<CommonInterface, ErrorBeanInterface> getAnimal(HttpServletResponse servletResponse) throws Exception {
 		
-		return prepareResponseInterface.excute(servletResponse, fetchUser.execute());
+		return prepareResponse.excute(servletResponse, fetchAnimals.execute());
 	}
+	
 }
