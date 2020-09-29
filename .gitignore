@@ -2,6 +2,12 @@
 /UI/package-lock.json
 /UI/public/bundle.js
 /Workspace/Rest/.settings
-/Workspace/RestInterface/.settings
 /Workspace/Rest/target
+/Workspace/RestInterface/.settings
 /Workspace/RestInterface/target
+/Workspace/crud/.settings
+/Workspace/crud/target
+/Workspace/Beans/.settings
+/Workspace/Beans/target
+/Workspace/elastic/.settings
+/Workspace/elastic/target
