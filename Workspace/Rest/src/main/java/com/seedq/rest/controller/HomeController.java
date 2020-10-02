@@ -10,4 +10,12 @@ public class HomeController {
 	public String sayHi() {
 		return "Well-Come";
 	}
+	@RequestMapping("/about")
+	public String about() {
+		return "Well-Come";
+	}
+	@RequestMapping("/help")
+	public String help() {
+		return "Well-Come";
+	}
 }

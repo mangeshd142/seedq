@@ -1,5 +1,7 @@
 package com.seedq.restinterface.crud.bean;
 
+import java.util.List;
+
 public interface IUserEntity extends IPersonEntity{
 	public String getEmail();
 
@@ -13,7 +15,7 @@ public interface IUserEntity extends IPersonEntity{
 
 	public void setIsActive(boolean isActive);
 	
-	public String getPid();
+	public List<IRoleEntity> getRoleEntity();
 
-	public void setPid(String pid);
+	public void setRoleEntity(List<IRoleEntity> role);
 }

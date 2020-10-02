@@ -5,7 +5,7 @@ import javax.persistence.MappedSuperclass;
 import com.seedq.restinterface.crud.bean.IPersonEntity;
 
 @MappedSuperclass
-public abstract class PersonEntity implements IPersonEntity{
+public abstract class PersonEntity extends BaseEntity implements IPersonEntity{
 
 	private String firstName;
 	private String lastName;

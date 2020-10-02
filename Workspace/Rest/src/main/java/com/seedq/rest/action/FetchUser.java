@@ -44,4 +44,8 @@ public class FetchUser implements FetchUserInterface{
 		return userList;
 	}
 	
+	public IUserEntity fetchUserByEmail(String email){
+		return fetchUserDao.fetchUserByEmail(email);
+	}
+	
 }

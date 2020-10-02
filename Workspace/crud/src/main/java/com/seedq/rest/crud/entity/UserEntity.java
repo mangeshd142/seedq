@@ -1,21 +1,21 @@
 package com.seedq.rest.crud.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.seedq.restinterface.crud.bean.IRoleEntity;
 import com.seedq.restinterface.crud.bean.IUserEntity;
 
 @Entity
-@Table(name = "user_entity")
+@Table(name = "user_table")
 public class UserEntity extends PersonEntity implements IUserEntity{
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String pid;
 	
 	@Column(unique = true)
 	private String email;
@@ -24,16 +24,24 @@ public class UserEntity extends PersonEntity implements IUserEntity{
 	
 	private boolean isActive;
 	
+	@ManyToMany(
+			targetEntity=RoleEntity.class,
+			fetch = FetchType.EAGER)
+	@JoinTable(name = "user_role", 
+		joinColumns = @JoinColumn(name = "user_id"), 
+		inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private List<IRoleEntity> roleEntity;
+	
 	public UserEntity() {
 
 	}
 	
-	public UserEntity(String firstName, String lastName, String pid, String email, String password, boolean isActive) {
+	public UserEntity(String firstName, String lastName, String email, String password, boolean isActive, List<IRoleEntity> roleEntity) {
 		super(firstName, lastName);
-		this.pid = pid;
 		this.email = email;
 		this.password = password;
 		this.isActive = isActive;
+		this.roleEntity = roleEntity;
 	}
 
 	public String getEmail() {
@@ -60,12 +68,13 @@ public class UserEntity extends PersonEntity implements IUserEntity{
 		this.isActive = isActive;
 	}
 
-	public String getPid() {
-		return pid;
+	public List<IRoleEntity> getRoleEntity() {
+		return roleEntity;
 	}
 
-	public void setPid(String pid) {
-		this.pid = pid;
+	@Override
+	public void setRoleEntity(List<IRoleEntity> roleEntity) {
+		this.roleEntity = roleEntity;
 	}
-	
+
 }

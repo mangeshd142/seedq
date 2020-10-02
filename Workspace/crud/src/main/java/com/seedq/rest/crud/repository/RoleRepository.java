@@ -3,10 +3,9 @@ package com.seedq.rest.crud.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.seedq.rest.crud.entity.UserEntity;
-
+import com.seedq.rest.crud.entity.RoleEntity;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, String>{
-	UserEntity findByEmail(String email);
+public interface RoleRepository extends JpaRepository<RoleEntity, String>{
+	RoleEntity findByRole(String role);
 }

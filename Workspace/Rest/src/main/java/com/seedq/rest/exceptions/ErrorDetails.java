@@ -1,4 +1,4 @@
-package com.seedq.rest.exceptions;
+/*package com.seedq.rest.exceptions;
 import java.util.Date;
 
 public class ErrorDetails {
@@ -24,4 +24,4 @@ public class ErrorDetails {
 	public String getDetails() {
 		return details;
 	}
-}
+}*/

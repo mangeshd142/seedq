@@ -23,6 +23,10 @@ public class FetchUserDAO implements IFetchUserDAO{
 		
 		return userList;
 	}
+	
+	public IUserEntity fetchUserByEmail(String email){
+		return userRepository.findByEmail(email);
+	}
 
 	
 }

@@ -42,7 +42,7 @@ public class UserController {
 	@PostMapping("/addUser")
 	public ResponseBeanInterface<CommonInterface, ErrorBeanInterface> addUser(HttpServletResponse servletResponse,
 			@RequestBody Map<String, Object> userMap) throws Exception {
-
+		System.out.println("add users");
 		return prepareResponseInterface.excute(servletResponse, saveUser.execute(userMap));
 	}
 
