@@ -1,10 +1,10 @@
+
 function apiFetch(url, method, sucessFunc, errorFunc,body){
-
-    /**/
-
+    var body = JSON.stringify(body);
+        
       if(method == "GET"){
         fetch(url)
-        .then(response => response)
+        .then(response => response.json())
         .then(data => console.log(data))
         .catch(function (error) {
           console.log('Request failed', error);
@@ -13,7 +13,7 @@ function apiFetch(url, method, sucessFunc, errorFunc,body){
         fetch(url, {
           method: method,
           headers: {
-            "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            "Content-type": "application/json; charset=UTF-8"
           },
           body: body
         })

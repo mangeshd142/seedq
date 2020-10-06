@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import App from '../components/App';
-
-
+import Home from '../components/Home';
 import { Provider } from "react-redux";
 import Store  from '../store/index';
 
@@ -15,7 +14,7 @@ class Controller extends Component {
     
     return (
       <Provider store={Store}>
-        <App/>
+        <Home/>
       </Provider>
     );
   }
