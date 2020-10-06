@@ -15,7 +15,7 @@ class Home extends Component {
       this.getSignUp = this.getSignUp.bind(this);
     }
 
-    getSignUp(){
+    getSignUp=()=>{
         this.setState({isLogin: false, isSignup:true})
     }
 
