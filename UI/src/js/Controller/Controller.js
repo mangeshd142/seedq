@@ -15,6 +15,7 @@ class Controller extends Component {
     return (
       <Provider store={Store}>
         <Home/>
+        <App/>
       </Provider>
     );
   }

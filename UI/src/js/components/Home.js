@@ -1,38 +1,45 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import {Button} from '@material-ui/core';
 import Signup from './Signup';
+import { showSignUp } from "../actions/index";
 
-class Home extends Component {
+function mapDispatchToProps(dispatch) {
+  return {
+    showSignUp: function(){return dispatch(showSignUp())}
+  };
+}
+const mapStateToProps = state => {
+  return { appData: state.appData };
+};
+class ConnectedHome extends Component {
   
     constructor(props) {
       super(props);
-      this.state = {
-          isLogin: false,
-          isSignup: false,
-      }
-
-      this.getLogin = this.getLogin.bind(this);
-      this.getSignUp = this.getSignUp.bind(this);
     }
 
     getSignUp=()=>{
-        this.setState({isLogin: false, isSignup:true})
+      this.props.showSignUp();
     }
 
-    getLogin(){
-        this.setState({isLogin: true, isSignup:false})
+    getLogin=()=>{
+      
     }
   
     render() {
-      let signinComponent = this.state.isSignup ? (<Signup/>) : null;
+      let signinComponent = this.props.appData.getIsSignUp() ? (<Signup/>) : null;
       return (
         <div>
-          <Button variant="contained" color="primary" onClick={this}>login</Button>
-          <Button variant="contained" color="primary" onClick={this.getSignUp}>signup</Button>
+          <Button variant="contained" color="primary" onClick={this.getLogin}>login</Button>
+          <Button variant="contained" color="primary" onClick={this.getSignUp}>signUp</Button>
           {signinComponent}
         </div>
       );
     }
   }
-  
+  const Home = connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(ConnectedHome);
   export default Home;
