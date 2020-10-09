@@ -3,6 +3,7 @@ import App from '../components/App';
 import Home from '../components/Home';
 import { Provider } from "react-redux";
 import Store  from '../store/index';
+import {Card} from '@material-ui/core/';
 
 class Controller extends Component {
   
@@ -14,7 +15,9 @@ class Controller extends Component {
     
     return (
       <Provider store={Store}>
-        <Home/>
+        <Card>
+         <Home/>
+        </Card>
         <App/>
       </Provider>
     );

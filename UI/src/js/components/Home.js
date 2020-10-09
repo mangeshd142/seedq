@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import {Button} from '@material-ui/core';
 import Signup from './Signup';
 import { showSignUp } from "../actions/index";
+import "./style/home.scss";
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -30,7 +31,10 @@ class ConnectedHome extends Component {
     render() {
       let signinComponent = this.props.appData.getIsSignUp() ? (<Signup/>) : null;
       return (
-        <div>
+        <div> 
+          <div className="app">
+            hello
+          </div>
           <Button variant="contained" color="primary" onClick={this.getLogin}>login</Button>
           <Button variant="contained" color="primary" onClick={this.getSignUp}>signUp</Button>
           {signinComponent}
