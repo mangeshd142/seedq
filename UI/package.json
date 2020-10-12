@@ -30,9 +30,13 @@
     "bulid-dev": "webpack --mode=development"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "lodash": "^4.17.20",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   }
 }

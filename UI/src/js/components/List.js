@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { removeArticle } from "../actions/index";
+import { removeArticle } from "../actions/home-actions";
 function mapDispatchToProps(dispatch) {
   return {
     removeArticle: article => dispatch(removeArticle(article))

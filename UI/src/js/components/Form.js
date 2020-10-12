@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addArticle } from "../actions/index";
+import { addArticle } from "../actions/home-actions";
 function mapDispatchToProps(dispatch) {
   return {
     addArticle: article => dispatch(addArticle(article))
